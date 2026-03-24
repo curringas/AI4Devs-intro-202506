@@ -155,11 +155,44 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
+    .result-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+      min-height: 24px;
+    }
+
     .result-label {
       font-size: 0.78rem;
       color: #475569;
-      text-align: center;
-      margin-top: 10px;
+    }
+
+    #copyBtn {
+      display: none;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 12px;
+      background: rgba(124, 58, 237, 0.15);
+      border: 1px solid rgba(124, 58, 237, 0.35);
+      border-radius: 8px;
+      color: #a78bfa;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+
+    #copyBtn:hover {
+      background: rgba(124, 58, 237, 0.28);
+      border-color: rgba(124, 58, 237, 0.6);
+    }
+
+    #copyBtn.copied {
+      background: rgba(34, 197, 94, 0.15);
+      border-color: rgba(34, 197, 94, 0.4);
+      color: #4ade80;
     }
   </style>
 </head>
@@ -183,7 +216,13 @@
       <span class="result-placeholder" id="placeholder">El resultado aparecerá aquí</span>
       <span id="resultText" style="display:none;"></span>
     </div>
-    <p class="result-label" id="resultLabel"></p>
+    <div class="result-footer">
+      <p class="result-label" id="resultLabel"></p>
+      <button id="copyBtn">
+        <span id="copyIcon">⎘</span>
+        <span id="copyText">Copy</span>
+      </button>
+    </div>
   </div>
 </body>
 </html>
